@@ -1,0 +1,45 @@
+Tester
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package studentinformation;
+
+import java.util.*;
+public class Tester {
+    private static SUBJECT s1,s2,s3,s4;
+    private static Student t;
+    public  static void display(){
+        System.out.println(t.getName());
+        System.out.println(t.getMetric());
+        System.out.println(t.getProgram());
+        
+        
+        
+        
+        
+    }
+    
+  
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner a= new Scanner (System.in);
+        String name, metric, program;
+        int credit; 
+        System.out.println("Enter Name :  ");
+        name = a.next();
+        System.out.println("Enter Metric :");
+        metric = a.next();
+        System.out.println("Enter Program :");
+        program = a.next();
+        System.out.println("Enter Bil :");
+        bil = a.next();
+        System. 
+        
+        
+       
+    }
+}

@@ -1,0 +1,39 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package book;
+
+
+    
+    
+  
+   
+    
+    
+/**
+ *
+ * @author FSK4
+ */
+public class Book 
+{
+    private String title;
+    private double price;
+
+    Book(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+    
+    public double getPrice() 
+    {
+        return price;
+    }
+
+    public String getTitle() 
+    {
+        return title;
+    }
+
+    
+  }

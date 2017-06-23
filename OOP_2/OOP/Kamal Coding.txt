@@ -1,0 +1,89 @@
+package book;
+import java.util.Scanner;
+
+public class Tester {
+
+    public static Book[] book = new Book[4];
+    public static void main(String[] args) 
+    {
+    Scanner a = new Scanner(System.in);
+    
+    int i;
+    String bookName;
+    double bookPrice;
+    double total=0;
+    
+    for(i=0; i<4; i++)
+    {
+    System.out.println("Enter Book Name");
+    bookName = a.next();
+    
+    System.out.println("Enter Book Price");
+    bookPrice = a.nextDouble();
+    
+    book[i]=new Book(bookName, bookPrice);
+    
+    total = book[i].bookPrice + total;
+    System.out.println("Total:RM" + total);
+    }       
+    display (total); 
+    }
+    public static void display(double total)
+    {
+      int i;
+      for(i=0; i<4; i++)
+      {
+          System.out.println("Book Tittle:" + book[i].getbookName());
+          System.out.println("Book Price:" + book[i].getbookPrice());
+      }
+      System.out.println("Total:" + total);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package book;
+
+/**
+ *
+ * @author FSK4
+ */
+public class Book {
+
+ private String bookName;
+ double bookPrice;
+    
+
+
+Book(String bookName, double bookPrice)
+{
+    this.bookName = bookName;
+    this.bookPrice = bookPrice;
+}
+
+public String getbookName()
+        {
+            return bookName;
+        }
+        
+public double getbookPrice()
+        {
+            return bookPrice;
+            
+        }
+}

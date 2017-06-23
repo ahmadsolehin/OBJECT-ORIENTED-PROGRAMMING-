@@ -1,0 +1,48 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package book;
+import java.util.Scanner;
+
+
+public class TESTER {
+    
+    public static Book [] book = new Book [2];
+    public static void main(String[] args) {
+        Scanner s= new Scanner (System.in);
+
+        double total=0;
+        int i;
+        String title;
+        double price;
+        
+        for(i=0; i<2; i++)
+        {
+        System.out.println("Enter Title :");
+        title= s.next();
+        System.out.println("Enter Price :");
+        price= s.nextDouble();
+        
+        book[i]=new Book (title,price);
+        
+        
+        
+        }
+        display();
+    }
+   
+    
+    public static void display ()
+    {
+        
+        int i;
+        for(i=0;i<2;i++)
+        {
+        System.out.println("Book Title:" + book[i].getTitle());
+        System.out.println("Book Price:" + book[i].getPrice());
+        }
+    }
+    }
+    
+

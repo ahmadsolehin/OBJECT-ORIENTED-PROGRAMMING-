@@ -1,0 +1,42 @@
+package cc10092_c22;
+
+import java.util.*;
+
+
+public class TESTER {
+
+   
+    public static void main(String[] args) {
+        
+        String memberName, memberAdd, membershipNo;
+        double memberPoint, oldMemberPoint, redeemPoint, newPoint, membershipType;
+     int i,j;
+     
+     customer c = new customer();
+     Membership ms = new Membership();
+     PurchaseOrder po = new PurchaseOrder();
+     PurchaseSlip ps = new PurchaseSlip();
+     Scanner sc =new Scanner(System.in);
+     
+     System.out.println("Name :");
+     memberName=sc.next();
+     System.out.println("Address :");
+     memberAdd=sc.next();
+     System.out.println("Membership No. :");
+     membershipNo=sc.next();
+     c = new customer(memberName, memberAdd, membershipNo);
+     
+     System.out.println("Member Point :");
+     memberPoint=sc.nextDouble();
+     System.out.println("Old member Point :");
+     oldMemberPoint=sc.nextDouble();
+     System.out.println("New Point :");
+     newPoint=sc.nextDouble();
+     System.out.println("Membership Type :");
+     membershipType=sc.nextDouble();
+     
+    
+     
+     
+     }
+}

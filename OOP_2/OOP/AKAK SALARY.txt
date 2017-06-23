@@ -1,0 +1,324 @@
+EMPLOYEE
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package staffsalary;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author FSK4
+ */
+public class Employee {
+    private String staffID;
+    private String StaffName;
+    private String department;
+    private String bankAccNo;
+    private String sallaryCreditDate;
+    private double tax;
+    private String status;
+    private String grade;
+    Scanner a = new Scanner(System.in);
+
+    public Employee(String staffID, String StaffName, String department, String bankAccNo, String sallaryCreditDate, double tax, String status, String grade) {
+        this.staffID = staffID;
+        this.StaffName = StaffName;
+        this.department = department;
+        this.bankAccNo = bankAccNo;
+        this.sallaryCreditDate = sallaryCreditDate;
+        this.tax = tax;
+        this.status = status;
+        this.grade = grade;
+        Scanner b = new Scanner(System.in);
+    }
+
+    public void setStaffName(String StaffName) {
+        this.StaffName = StaffName;
+    }
+
+    public void setBankAccNo(String bankAccNo) {
+        this.bankAccNo = bankAccNo;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public void setSallaryCreditDate(String sallaryCreditDate) {
+        this.sallaryCreditDate = sallaryCreditDate;
+    }
+
+    public void setStaffID(String staffID) {
+        this.staffID = staffID;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
+    public String getStaffName() {
+        return StaffName;
+    }
+
+    public String getBankAccNo() {
+        return bankAccNo;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public String getSallaryCreditDate() {
+        return sallaryCreditDate;
+    }
+
+    public String getStaffID() {
+        return staffID;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void employee(){
+        System.out.println("Enter Staff ID: ");
+        staffID = a.next();
+        System.out.println("Enter Staff Name: ");
+        StaffName = a.next();
+        System.out.println("Enter Staff Department: ");
+        department = a.next();
+        System.out.println("Enter Staff Bank Acc No: ");
+        bankAccNo = a.next();
+        System.out.println("Enter Staff Salary Credit Date: ");
+        sallaryCreditDate = a.next();
+        System.out.println("Enter Staff Grade: ");
+        grade = a.next();
+    } 
+   
+}
+
+
+SALARY
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package staffsalary;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author FSK4
+ */
+public class Salary {
+    private double basicSalary;
+    private double ITKA = 300;
+    private double bantuanSaraHidup = 200;
+    private double ITP;
+    private double cukaiPendapatan;
+    private double zakatPendapatan;
+    private double pinjamanPerumahan;
+    private double pinjamanKereta;
+    private double insuran;
+    private double KKDSS;
+    private double elaunKeraian;
+    double nettSalary;
+    Scanner d = new Scanner(System.in);
+
+    public Salary(double basicSalary, double ITKA, double bantuanSaraHidup, double ITP, double cukaiPendapatan, double zakatPendapatan, double pinjamanPerumahan, double pinjamanKereta, double insuran, double KKDSS) {
+        this.basicSalary = basicSalary;
+        this.ITKA = ITKA;
+        this.bantuanSaraHidup = bantuanSaraHidup;
+        this.ITP = ITP;
+        this.cukaiPendapatan = cukaiPendapatan;
+        this.zakatPendapatan = zakatPendapatan;
+        this.pinjamanPerumahan = pinjamanPerumahan;
+        this.pinjamanKereta = pinjamanKereta;
+        this.insuran = insuran;
+        this.KKDSS = KKDSS;
+    }
+
+    public double getITKA() {
+        return ITKA;
+    }
+
+    public double getITP() {
+        return ITP;
+    }
+
+    public double getKKDSS() {
+        return KKDSS;
+    }
+
+    public double getBantuanSaraHidup() {
+        return bantuanSaraHidup;
+    }
+
+    public double getBasicSalary() {
+        return basicSalary;
+    }
+
+    public double getCukaiPendapatan() {
+        return cukaiPendapatan;
+    }
+
+    public double getInsuran() {
+        return insuran;
+    }
+
+    public double getPinjamanKereta() {
+        return pinjamanKereta;
+    }
+
+    public double getPinjamanPerumahan() {
+        return pinjamanPerumahan;
+    }
+
+    public double getZakatPendapatan() {
+        return zakatPendapatan;
+    }
+    
+    public double getElaunKeraian() {
+        return elaunKeraian;
+    }
+    
+   public void salaryInput(){
+        System.out.println("Enter Staff Basic Salary: ");
+        basicSalary= d.nextDouble();
+        System.out.println("Enter Staff Insurance: ");
+        insuran= d.nextDouble();
+        System.out.println("Enter Staff House Loan: ");
+        pinjamanPerumahan= d.nextDouble();
+        System.out.println("Enter Staff Car Loan: ");
+        pinjamanKereta= d.nextDouble();
+        System.out.println("\t");
+    }
+         public void income(String grade){
+        
+        if ("N45".equals(grade)){
+            elaunKeraian = 300.00;
+        }else
+            
+        if ("N48".equals(grade)){
+            elaunKeraian = 600.00;
+        }else
+                
+        if ("N52".equals(grade)){
+        elaunKeraian = 900.00;
+        }else
+                    
+        if ("N54".equals(grade)){
+        elaunKeraian = 1200.00;
+        }
+      
+        if(grade.compareTo("N48") < 0){
+            ITP = 700.00;
+        }else
+        
+        if(grade.compareTo("N48") >= 0){
+            ITP = 1000.00;
+        }
+        
+     
+    }
+    
+    public void deduction(){
+        zakatPendapatan = 0.25 * this.basicSalary;
+        
+        if (this.basicSalary > 2500.00){
+            cukaiPendapatan = 0.5 * this.basicSalary;
+        }
+        
+        KKDSS = 3.00;
+    }
+    
+    public void nettSalary(){
+        
+        nettSalary = (this.basicSalary + elaunKeraian + ITP +bantuanSaraHidup + ITKA)   -
+                     (zakatPendapatan + cukaiPendapatan + KKDSS + pinjamanPerumahan + pinjamanKereta);
+    }
+    
+    public void display(Employee emp){
+        System.out.println("Staff ID: " + emp.getStaffID());
+        System.out.println("Staff Name: " + emp.getStaffName());
+        System.out.println("Department: " + emp.getDepartment());
+        System.out.println("Bank Acc No: " + emp.getBankAccNo());
+        System.out.println("Salary Credit Date: " + emp.getSallaryCreditDate());
+        System.out.println("Tax: " + cukaiPendapatan);
+        
+        System.out.println("\t");
+        System.out.println("\t");
+        System.out.println("INCOME");
+      
+        System.out.println("Basic Salary: " + basicSalary);
+        System.out.println("Imbuhan Tetap Khidmat Awam(ITKA): " + ITKA);
+        System.out.println("Imbuhan Tetap Perumahan: " + ITP);
+        System.out.println("Elaun Sara Hidup: " + bantuanSaraHidup);
+        
+        System.out.println("\t");
+        System.out.println("\t");
+        System.out.println("DEDUCTION");
+        
+        System.out.println("Cukai Pendapatan: " + cukaiPendapatan);
+        System.out.println("Insuran: " + insuran);
+        System.out.println("Zakat Pendapatan: " + zakatPendapatan);
+        System.out.println("Pinjaman Perumahan: " + pinjamanPerumahan);
+        System.out.println("Pinjaman Kenderaan: " + pinjamanKereta);
+        System.out.println("KKDSS: " + KKDSS);
+        System.out.println("Nett Salary: " + nettSalary);
+   
+    }
+}   
+
+TESTER
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package staffsalary;
+
+/**
+ *
+ * @author FSK4
+ */
+public class Tester {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Employee emp = new Employee ();
+       Salary sal =  ;
+      
+        emp.employee();
+        sal.salaryInput();
+        sal.income(emp.getGrade());
+        sal.deduction();
+        sal.nettSalary();
+        sal.display(emp);
+    }
+
+    
+}

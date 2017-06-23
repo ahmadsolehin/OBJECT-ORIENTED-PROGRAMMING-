@@ -1,0 +1,42 @@
+subject
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package studentinformation;
+
+/**
+ *
+ * @author FSK4
+ */
+public class SUBJECT {
+    private int bil;
+    private String subjectName ;
+    private int credit;
+    
+    public void setBil (int b) {
+        bil=b;
+    }
+    
+    public void setSubjectName (String s){
+        subjectName=s;
+    }
+    
+    public void setCredit (int c){
+        credit=c;
+    }
+    
+    public int getBil (){
+        return bil;
+    }
+    
+    public String getSubjectName (){
+        return subjectName;
+    }
+    
+    public int getCredit (){
+        return credit;
+    }
+    
+}

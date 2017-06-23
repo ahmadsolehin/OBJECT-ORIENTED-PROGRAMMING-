@@ -1,0 +1,112 @@
+create table staff_1
+(
+staff_no varchar(20),
+staff_name varchar(20),
+position varchar(20),
+salary int,
+shift_no varchar(20),
+foreign key(shift_no) references shift_1(shift_no) 
+)
+
+create table shift_1
+(
+shift_no varchar(20) not null primary key,
+shift_name varchar(20),
+shift_manager varchar(20)
+)
+
+
+insert into staff_1
+valuesvalues('s100','ahmad','cashier',2000,'s1')
+
+
+insert all
+into staff_1
+values('s100','ahmad','cashier',2000,'s1')
+into staff_1
+values('s101','firdaus','store clerk',1800,'s3')
+into staff_1
+values('s102','zarina','manager',3000,'s1')
+into staff_1
+values('s103','radhiah','store clerk',1500,'s1')
+into staff_1
+values('s104','liyana','manager',3200,'s2')
+into staff_1
+values('s105','anna','cashier',1900,'s3')
+into staff_1
+values('s106','zarina','store clerk',1900,'s2')
+select 1 from dual
+
+
+insert into shift_1
+values('s1','night','s104')
+
+insert all
+into shift_1
+values('s1','night','s104')
+into shift_1
+values('s2','day','s104')
+into shift_1
+values('s3','morning','s102')
+select 1 from dual
+
+
+select staff_name,position
+from staff_1
+order by salary
+
+select staff_name,position,salary,
+salary-(select avg(salary) from staff_1)
+from staff_1
+where salary >(select avg(salary) from staff_1)
+
+select staff_name,position,salary
+from staff_1
+where salary between 2000 and 3000
+
+select staff_name
+from staff_1
+where staff_name like '%a'
+
+select staff_name
+from staff_1
+where staff_name like '__r%'
+
+select staff_name
+from staff_1
+where position != 'manager'
+
+select max(salary),min(salary),avg(salary)
+from staff_1
+where position='store clerk'
+
+
+select staff_name,staff_no,position,
+salary - (select avg(salary) from staff_1) as Different
+from staff_1
+where salary > (select avg(salary) from staff_1)
+
+select s.staff_name,s.position,b.shift_name
+from staff_1 s,shift_1 b
+where b.shift_no=b.shift_no
+and b.shift_name='morning'
+
+select s.staff_name,s.position,b.shift_name
+from staff_1 s,shift_1 b
+where b.shift_no=b.shift_no
+and b.shift_manager='s104' and b.shift_name='day'
+
+select count(position)
+from staff_1
+order by staff_name desc
+
+select s.staff_name,s.position,b.shift_name,b.shift_name,b.shift_manager
+from staff_1 s,shift_1 b
+where b.shift_no=b.shift_no
+order by s.staff_name desc
+
+select s.staff_name,s.position,b.shift_name,b.shift_name,b.shift_manager,
+salary - (select avg(salary) from staff_1) as Different
+from staff_1 s,shift_1 b
+where b.shift_no=b.shift_no and salary > (select avg(salary) from staff_1)
+and b.shift_name='night'
