@@ -1,0 +1,6 @@
+# OBJECT-ORIENTED-PROGRAMMING-
+BCS2143 - OBJECT ORIENTED PROGRAMMING
+
+# result
+
+![nn](https://user-images.githubusercontent.com/12325386/27505853-ac979094-58dc-11e7-903f-64757801ec37.jpg)
